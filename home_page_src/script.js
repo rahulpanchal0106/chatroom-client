@@ -17,7 +17,7 @@ function getJsonDataFromBase64Cookie(cookieName) {
 }
 
 async function getHistory(){
-    await fetch('/history')
+    await fetch('https://chatroom-gy71.onrender.com/history')
     .then((res)=>{
         return res.json()
     })
@@ -108,7 +108,7 @@ function get_time() {
 }
 
 
-const socket = io('wss://chatroom-gy71.onrender.com',{
+const socket = io('https://chatroom-gy71.onrender.com',{
     auth:{
         user_name:user_name
     }
@@ -237,7 +237,7 @@ document.querySelector('#send').onclick=(e)=>{
 
 document.querySelector('#members').onclick=()=>{
     console.log('%%%%%%%%%%%%Clicked%%%%%%%%%%%%%%');
-    fetch('/members')
+    fetch('https://chatroom-gy71.onrender.com/members')
     .then(res=>{
         return res.json()
     })
@@ -281,7 +281,7 @@ document.querySelector('#options').onclick=()=>{
 let members_c = 0;
 document.querySelector('#members').onclick=async ()=>{
 
-    await fetch('/members')
+    await fetch('https://chatroom-gy71.onrender.com/members')
     .then(res=>{
         return res.json()
     })
